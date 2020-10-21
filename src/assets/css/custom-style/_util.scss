@@ -1,0 +1,23 @@
+// --------------------------------
+
+// How to add custom utility classes
+
+// --------------------------------
+
+// 👇 your custom utility class
+// .my-util-class {
+//   property: value;
+// }
+
+// 👇 (optional) create responsive variations - edit only [my-util-class, property, value]
+// @each $breakpoint, $value in $breakpoints {
+//   @include breakpoint(#{$breakpoint}) {
+//     .my-util-class\@#{$breakpoint} {
+//       property: value;
+//     }
+//   }
+// }
+
+.media-wrapper--4\:5 {
+  padding-bottom: 125%; // calc(5/4*100)
+}

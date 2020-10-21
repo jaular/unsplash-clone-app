@@ -1,0 +1,7 @@
+.jaular {
+  color: var(--color-primary-dark);
+  transition: 0.3s;
+  &:hover {
+    color: var(--color-accent);
+  }
+}
