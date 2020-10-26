@@ -24,7 +24,7 @@ const Hero = ({ setQuery, setPage, url, label, paragraph }) => {
 
 // defaultProps
 Hero.defaultProps = {
-  url: `https://source.unsplash.com/random/1200x800`,
+  url: `https://source.unsplash.com/random/800x400`,
   label: "Unsplash",
   paragraph: "Beautiful Free Images & Pictures",
 };

@@ -10,17 +10,21 @@ export const useFetchImages = (url) => {
 
   useEffect(() => {
     getData(url);
+    return () => {
+      setState({ loading: true });
+    };
   }, [url]);
 
   const getData = async (url) => {
-    const response = await axios.get(url);
     try {
+      const response = await axios.get(url);
+
       if (response.status === 200 && response.data.results) {
         const { total_pages, results } = response.data;
 
         const imgs = results.map((img) => ({
           id: img.id,
-          url: img.urls.regular,
+          url: img.urls.small,
           link: img.links.html,
           alt: img.alt_description,
         }));
@@ -31,7 +35,7 @@ export const useFetchImages = (url) => {
 
         const imgs = data.map((img) => ({
           id: img.id,
-          url: img.urls.regular,
+          url: img.urls.small,
           link: img.links.html,
           alt: img.alt_description,
         }));
