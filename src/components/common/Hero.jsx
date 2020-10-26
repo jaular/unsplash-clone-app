@@ -25,7 +25,7 @@ const Hero = ({ setQuery, setPage, url, label, paragraph }) => {
 // defaultProps
 Hero.defaultProps = {
   // url: `https://source.unsplash.com/random/800x400`,
-  url: `https://picsum.photos/800/400`,
+  url: `https://picsum.photos/1000/600`,
   label: "Unsplash",
   paragraph: "Beautiful Free Images & Pictures",
 };
