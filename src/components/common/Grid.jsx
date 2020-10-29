@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Grid = ({ data }) => {
   return (
-    <ul className="grid-auto-md gap-md">
+    <ul className="grid-auto-sm gap-md">
       {data.map((item) => (
         <Card key={item.id} data={item} />
       ))}

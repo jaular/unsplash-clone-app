@@ -2,7 +2,7 @@ import React from "react";
 
 const Message = ({ text }) => {
   return (
-    <div className="text-center padding-y-xxl">
+    <div className="text-center padding-y-lg">
       <h4 className="color-contrast-high">{text}</h4>
     </div>
   );

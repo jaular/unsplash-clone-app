@@ -14,9 +14,9 @@ const Unsplash = () => {
 
   let url;
   if (!query) {
-    url = `https://api.unsplash.com/photos?page=${page}&per_page=8&client_id=C73hF8NTZnuUEuLAKSBulEhuSKHm-SpI2XDU5-kk8kk`;
+    url = `https://api.unsplash.com/photos?page=${page}&per_page=6&client_id=${API_KEY}`;
   } else {
-    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=8&query=${encodeURI(
+    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=6&query=${encodeURI(
       query
     )}&client_id=${API_KEY}`;
   }
@@ -24,7 +24,7 @@ const Unsplash = () => {
   const { data: images, loading, totalPages } = useFetchImages(url);
 
   const displayResult = loading ? (
-    <Message text="Loading" />
+    <Message text="Loading..." />
   ) : images.length > 0 ? (
     <Grid data={images} />
   ) : (
@@ -46,7 +46,11 @@ const Unsplash = () => {
         <h4 className="margin-y-md color-contrast-high">{getLabel(query)}</h4>
         {displayResult}
       </div>
-      <Pagination page={page} setPage={setPage} totalPage={totalPages} />
+      <Pagination
+        page={totalPages > 0 ? page : 0}
+        setPage={setPage}
+        totalPage={totalPages}
+      />
     </>
   );
 };

@@ -43,12 +43,17 @@ export const useFetchImages = (url) => {
         setState({ data: imgs, totalPages: 10, loading: false });
       }
     } catch (ex) {
-      if (ex.response && ex.response.status === 404) console.log("Not found");
-      else {
+      if (
+        ex.response &&
+        (ex.response.status === 404 || ex.response.status === 403)
+      ) {
+        console.log("Not found");
+        console.log("Logging the error:", ex);
+      } else {
         console.log("An unexpected error ocurred");
         console.log("Logging the error:", ex);
       }
-      setState({});
+      setState({ data: [], totalPages: 0, loading: false });
     }
   };
 
