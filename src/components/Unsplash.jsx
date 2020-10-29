@@ -46,11 +46,9 @@ const Unsplash = () => {
         <h4 className="margin-y-md color-contrast-high">{getLabel(query)}</h4>
         {displayResult}
       </div>
-      <Pagination
-        page={totalPages > 0 ? page : 0}
-        setPage={setPage}
-        totalPage={totalPages}
-      />
+      {totalPages > 0 && (
+        <Pagination page={page} setPage={setPage} totalPage={totalPages} />
+      )}
     </>
   );
 };
