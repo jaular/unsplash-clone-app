@@ -14,9 +14,9 @@ const Unsplash = () => {
 
   let url;
   if (!query) {
-    url = `https://api.unsplash.com/photos?page=${page}&per_page=6&client_id=${API_KEY}`;
+    url = `https://api.unsplash.com/photos?page=${page}&per_page=12&client_id=${API_KEY}`;
   } else {
-    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=6&query=${encodeURI(
+    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=12&query=${encodeURI(
       query
     )}&client_id=${API_KEY}`;
   }
