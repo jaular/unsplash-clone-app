@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 
-const Grid = ({ data }) => {
+const Grid = React.memo(({ data }) => {
   return (
     <ul className="grid-auto-sm gap-md">
       {data.map((item) => (
@@ -9,6 +9,6 @@ const Grid = ({ data }) => {
       ))}
     </ul>
   );
-};
+});
 
 export default Grid;

@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInput from "./SearchInput";
 
-const Hero = ({ setQuery, setPage, url, label, paragraph }) => {
+const Hero = React.memo(({ setQuery, setPage, url, label, paragraph }) => {
   return (
     <section
       className="hero hero--overlay-layer position-relative padding-y-xxl"
@@ -20,7 +20,7 @@ const Hero = ({ setQuery, setPage, url, label, paragraph }) => {
       </div>
     </section>
   );
-};
+});
 
 // defaultProps
 Hero.defaultProps = {

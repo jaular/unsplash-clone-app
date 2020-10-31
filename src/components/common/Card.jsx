@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ data }) => {
+const Card = React.memo(({ data }) => {
   return (
     <li>
       <a href={data.link} target="_blank" rel="noopener noreferrer">
@@ -14,6 +14,6 @@ const Card = ({ data }) => {
       </a>
     </li>
   );
-};
+});
 
 export default Card;
