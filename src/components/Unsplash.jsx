@@ -14,9 +14,9 @@ const Unsplash = () => {
 
   let url;
   if (!query) {
-    url = `https://api.unsplash.com/photos?page=${page}&per_page=12&client_id=${API_KEY}`;
+    url = `https://api.unsplash.com/photos?page=${page}&per_page=10&client_id=${API_KEY}`;
   } else {
-    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=12&query=${encodeURI(
+    url = `https://api.unsplash.com/search/photos?page=${page}&per_page=10&query=${encodeURI(
       query
     )}&client_id=${API_KEY}`;
   }
@@ -24,7 +24,7 @@ const Unsplash = () => {
   const { data: images, loading, totalPages } = useFetchImages(url);
 
   const displayResult = loading ? (
-    <Message text="Loading..." />
+    <Message text="Loading" />
   ) : images.length > 0 ? (
     <Grid data={images} />
   ) : (
@@ -42,7 +42,7 @@ const Unsplash = () => {
   return (
     <>
       <Hero setQuery={setQuery} setPage={setPage} />
-      <div className="container max-width-adaptive-lg margin-y-md">
+      <div className="container max-width-adaptive-md margin-y-md">
         <h4 className="margin-y-md color-contrast-high">{getLabel(query)}</h4>
         {displayResult}
       </div>

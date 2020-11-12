@@ -9,6 +9,7 @@ const Card = React.memo(({ data }) => {
             className="block width-100% radius-md"
             src={data.url}
             alt={data.alt}
+            title={data.alt}
           />
         </figure>
       </a>

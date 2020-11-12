@@ -26,7 +26,7 @@ const Hero = React.memo(({ setQuery, setPage, url, label, paragraph }) => {
 Hero.defaultProps = {
   // url: `https://source.unsplash.com/random/800x400`,
   url: `https://picsum.photos/1000/600`,
-  label: "Unsplash",
+  label: "Images",
   paragraph: "Beautiful Free Images & Pictures",
 };
 
